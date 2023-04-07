@@ -1,3 +1,8 @@
+.App {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .nav {
   width: 1200px;
   height: 150px;
@@ -69,4 +74,9 @@
   font-weight: 700;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
 }

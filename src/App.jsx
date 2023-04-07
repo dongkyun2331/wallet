@@ -86,7 +86,9 @@ function App() {
           </div>
         </div>
       </nav>
-      <div className="coin"></div>
+      <div className="title">
+        거래소↔내 지갑 간 간편하게 <strong>입출금</strong>하세요
+      </div>
     </div>
   );
 }

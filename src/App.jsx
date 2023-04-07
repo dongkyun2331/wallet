@@ -86,6 +86,7 @@ function App() {
           </div>
         </div>
       </nav>
+      <div className="coin"></div>
     </div>
   );
 }

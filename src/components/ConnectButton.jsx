@@ -4,7 +4,11 @@ const ConnectButton = (props) => {
   const { isConnected, connectWallet, currentBalance, walletAddress, chainId } =
     props;
 
-  const displayWalletAddress = `${walletAddress?.substring(0, 10)}...`;
+  const displayWalletAddress = `0x${walletAddress?.substring(
+    2,
+    5
+  )}...${walletAddress?.substring(38)}`;
+
   const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
 
   return (
@@ -23,7 +27,7 @@ const ConnectButton = (props) => {
         </div>
       ) : (
         <div className="btn connectButton" onClick={() => connectWallet()}>
-          Connect Wallet
+          지갑 연결
         </div>
       )}
     </>

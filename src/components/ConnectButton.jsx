@@ -1,5 +1,3 @@
-import { ethers } from "ethers";
-import { useCallback } from "react";
 import chainIds from "../chainList/chainIds";
 
 const ConnectButton = (props) => {

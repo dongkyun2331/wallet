@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
 .App {
   width: 1200px;
   margin: 0 auto;
@@ -28,7 +38,6 @@
 
 .rightNav {
   float: right;
-  margin-top: 20px;
 }
 
 .connectButtonContainer {
@@ -42,7 +51,7 @@
 }
 
 .connectButton {
-  border: 1px solid #999;
+  border: 1px solid #c1c5cc;
   border-radius: 2px;
   color: #999;
   width: 100%;
@@ -79,8 +88,46 @@
 .title {
   font-size: 28px;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .title strong {
   color: #e66d16;
+}
+
+.wallet {
+  border: 1px solid #c1c5cc;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.wallet > h2 {
+  color: #6f6558;
+  font-size: 14px;
+  padding: 30px;
+}
+
+.wallet > ul {
+  display: flex;
+  border-top: 1px solid #c1c5cc;
+  border-bottom: 1px solid #c1c5cc;
+  gap: 150px;
+}
+
+.wallet > ul > li {
+  color: #c1c5cc;
+  font-size: 12px;
+  margin-left: 30px;
+  padding: 5px 0;
+}
+
+.name {
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.symbol {
+  color: #999;
+  font-size: 12px;
 }

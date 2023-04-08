@@ -1,8 +1,9 @@
 import "./App.css";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { ethers } from "ethers";
 
 import ConnectButton from "./components/ConnectButton";
+import Coin from "./components/Coin";
 
 function App() {
   const [provider, setProvider] = useState(undefined);
@@ -80,14 +81,27 @@ function App() {
               isConnected={isConnected}
               connectWallet={connectWallet}
               walletAddress={walletAddress}
-              currentBalance={currentBalance}
-              chainId={chainId}
             />
           </div>
         </div>
       </nav>
       <div className="title">
         거래소↔내 지갑 간 간편하게 <strong>입출금</strong>하세요
+      </div>
+      <div className="wallet">
+        <h2>wallet</h2>
+        <ul>
+          <li>토큰</li>
+          <li>수량</li>
+          <li>가격</li>
+          <li>최근 7일</li>
+          <li>평가금액</li>
+        </ul>
+        <Coin
+          isConnected={isConnected}
+          currentBalance={currentBalance}
+          chainId={chainId}
+        />
       </div>
     </div>
   );

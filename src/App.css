@@ -97,8 +97,6 @@ li {
 
 .wallet {
   border: 1px solid #c1c5cc;
-  width: 100%;
-  max-width: 1200px;
 }
 
 .wallet > h2 {
@@ -107,18 +105,23 @@ li {
   padding: 30px;
 }
 
-.wallet > ul {
+.wallet > .menu {
   display: flex;
   border-top: 1px solid #c1c5cc;
   border-bottom: 1px solid #c1c5cc;
   gap: 150px;
 }
 
-.wallet > ul > li {
+.wallet > .menu > li {
   color: #c1c5cc;
   font-size: 12px;
-  margin-left: 30px;
   padding: 5px 0;
+  margin-left: 30px;
+}
+
+.coin {
+  display: flex;
+  gap: 100px;
 }
 
 .name {
@@ -130,4 +133,8 @@ li {
 .symbol {
   color: #999;
   font-size: 12px;
+}
+
+.balance {
+  margin-top: 30px;
 }

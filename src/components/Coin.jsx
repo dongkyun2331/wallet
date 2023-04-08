@@ -17,13 +17,20 @@ const Coin = (props) => {
   return (
     <>
       {isConnected ? (
-        <div>
-          <span className="icon">{chainIds[chainId].icon}</span>
-          <span>
-            <div className="name">{chainIds[chainId].name}</div>
-            <div className="symbol">{chainIds[chainId].symbol}</div>
-          </span>
-        </div>
+        <ul className="coin">
+          <li>
+            <span>
+              <div className="icon">{chainIds[chainId].icon}</div>
+            </span>
+            <span>
+              <div className="name">{chainIds[chainId].name}</div>
+              <div className="symbol">{chainIds[chainId].symbol}</div>
+            </span>
+          </li>
+          <li>
+            <div className="balance">{displayCurrentBalance}</div>
+          </li>
+        </ul>
       ) : (
         <div></div>
       )}

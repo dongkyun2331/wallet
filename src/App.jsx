@@ -90,7 +90,7 @@ function App() {
       </div>
       <div className="wallet">
         <h2>wallet</h2>
-        <ul>
+        <ul className="menu">
           <li>토큰</li>
           <li>수량</li>
           <li>가격</li>

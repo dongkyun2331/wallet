@@ -1,18 +1,32 @@
+import { useState, useEffect } from "react";
 import chainIds from "../chainList/chainIds";
-
-// 외부 API 또는 블록체인 데이터를 조회하여 현재 코인의 가격 정보를 얻습니다.
-async function getCoinPrice(coinSymbol) {
-  const response = await fetch(
-    `https://api.coingecko.com/api/v3/simple/price?ids=${coinSymbol}&vs_currencies=usd`
-  );
-  const data = await response.json();
-  return data[coinSymbol].usd;
-}
+import axios from "axios";
 
 const Coin = (props) => {
   const { isConnected, currentBalance, chainId } = props;
 
   const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
+
+  const [coinPrice, setCoinPrice] = useState(null);
+  const [setLoading] = useState(true);
+  const [setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCoinPrice = async () => {
+      try {
+        const symbol = chainIds[chainId]?.symbol || "ETH"; // 체인 ID에 맞는 코인 심볼을 선택합니다. 없으면 "ETH"를 기본값으로 사용합니다.
+        const response = await axios.get(
+          `https://api.binance.com/api/v3/ticker/price?symbol=${symbol}USDT`
+        );
+        setCoinPrice(response.data.price);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+    fetchCoinPrice();
+  }, []);
 
   return (
     <>
@@ -30,9 +44,27 @@ const Coin = (props) => {
           <li>
             <div className="balance">{displayCurrentBalance}</div>
           </li>
+          <li>
+            <div className="price">{coinPrice}</div>
+          </li>
         </ul>
       ) : (
-        <div></div>
+        <ul className="coin">
+          <li>
+            <span>
+              <div className="icon">
+                <img src="./images/ethereum.webp" alt="" />
+              </div>
+            </span>
+            <span>
+              <div className="name">이더리움</div>
+              <div className="symbol">ETH</div>
+            </span>
+          </li>
+          <li>
+            <div className="balance">0.0000</div>
+          </li>
+        </ul>
       )}
     </>
   );

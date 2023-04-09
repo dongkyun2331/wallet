@@ -5,8 +5,6 @@ import axios from "axios";
 const Coin = (props) => {
   const { isConnected, currentBalance, chainId } = props;
 
-  const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
-
   const [coinPrice, setCoinPrice] = useState(null);
   const [setLoading] = useState(true);
   const [setError] = useState(null);
@@ -28,6 +26,8 @@ const Coin = (props) => {
     fetchCoinPrice();
   }, []);
 
+  const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
+
   return (
     <>
       {isConnected ? (
@@ -45,7 +45,9 @@ const Coin = (props) => {
             <div className="balance">{displayCurrentBalance}</div>
           </li>
           <li>
-            <div className="price">{coinPrice}</div>
+            <div className="price">
+              {coinPrice ? Number(coinPrice).toFixed(2) : ""}
+            </div>
           </li>
         </ul>
       ) : (
@@ -63,6 +65,11 @@ const Coin = (props) => {
           </li>
           <li>
             <div className="balance">0.0000</div>
+          </li>
+          <li>
+            <div className="price">
+              {coinPrice ? Number(coinPrice).toFixed(2) : ""}
+            </div>
           </li>
         </ul>
       )}

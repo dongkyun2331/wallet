@@ -8,6 +8,8 @@ const Coin = (props) => {
   const [coinPrice, setCoinPrice] = useState(null);
   const [setLoading] = useState(true);
   const [setError] = useState(null);
+  const [isDepositOpen, setIsDepositOpen] = useState(false);
+  const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);
 
   useEffect(() => {
     const fetchCoinPrice = async () => {
@@ -31,35 +33,77 @@ const Coin = (props) => {
   const evaluation = coinPrice ? currentBalance * coinPrice : 0;
   const displayEvaluation = evaluation ? evaluation.toFixed(2) : "0.00";
 
+  const handleDepositClick = () => {
+    setIsDepositOpen(true);
+  };
+
+  const handleWithdrawClick = () => {
+    setIsWithdrawOpen(true);
+  };
+
+  const handleCloseClick = () => {
+    setIsDepositOpen(false);
+    setIsWithdrawOpen(false);
+  };
+
   return (
     <>
       {isConnected ? (
-        <ul className="coin">
-          <li>
-            <span>
-              <div className="icon">{chainIds[chainId].icon}</div>
-            </span>
-            <span>
-              <div className="name">{chainIds[chainId].name}</div>
-              <div className="symbol">{chainIds[chainId].symbol}</div>
-            </span>
-          </li>
-          <li>
-            <div className="balance">{displayCurrentBalance}</div>
-          </li>
-          <li>
-            <div className="price">
-              {coinPrice ? Number(coinPrice).toFixed(4) : ""}
+        <div>
+          <ul className="coin">
+            <li>
+              <span>
+                <div className="icon">{chainIds[chainId].icon}</div>
+              </span>
+              <span>
+                <div className="name">{chainIds[chainId].name}</div>
+                <div className="symbol">{chainIds[chainId].symbol}</div>
+              </span>
+            </li>
+            <li>
+              <div className="balance">{displayCurrentBalance}</div>
+            </li>
+            <li>
+              <div className="price">
+                {coinPrice ? Number(coinPrice).toFixed(4) : ""}
+              </div>
+            </li>
+            <li>
+              <div className="evaluation">{displayEvaluation}</div>
+            </li>
+            <li className="button">
+              <button className="deposit" onClick={handleDepositClick}>
+                입금
+              </button>
+              <button className="withdraw" onClick={handleWithdrawClick}>
+                출금
+              </button>
+            </li>
+          </ul>
+          {(isDepositOpen || isWithdrawOpen) && (
+            <div>
+              <div className="dimm" onClick={handleCloseClick}></div>
+              {isDepositOpen && (
+                <div className="depositpage">
+                  <img
+                    onClick={handleCloseClick}
+                    src="./images/ic-modal-close.svg"
+                    alt=""
+                  />
+                </div>
+              )}
+              {isWithdrawOpen && (
+                <div className="withdrawpage">
+                  <img
+                    onClick={handleCloseClick}
+                    src="./images/ic-modal-close.svg"
+                    alt=""
+                  />
+                </div>
+              )}
             </div>
-          </li>
-          <li>
-            <div className="evaluation">{displayEvaluation}</div>
-          </li>
-          <li className="button">
-            <button className="deposit">입금</button>
-            <button className="withdraw">출금</button>
-          </li>
-        </ul>
+          )}
+        </div>
       ) : (
         <ul className="coin">
           <li>

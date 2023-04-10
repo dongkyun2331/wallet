@@ -196,7 +196,7 @@ li {
   transform: translate(-50%, -50%);
   width: 33%;
   height: 95%;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1.5rem;
   /* 1rem : 16px */
   background-color: #fff;
   z-index: 2;
@@ -209,8 +209,19 @@ li {
   transform: translate(-50%, -50%);
   width: 33%;
   height: 95%;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1.5rem;
   /* 1rem : 16px */
   background-color: #fff;
   z-index: 2;
+}
+
+h2 {
+  float: left;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.close {
+  float: right;
 }

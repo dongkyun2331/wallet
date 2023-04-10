@@ -85,7 +85,9 @@ const Coin = (props) => {
               <div className="dimm" onClick={handleCloseClick}></div>
               {isDepositOpen && (
                 <div className="depositpage">
+                  <article className="modal-title">입금</article>
                   <img
+                    className="close"
                     onClick={handleCloseClick}
                     src="./images/ic-modal-close.svg"
                     alt=""
@@ -94,7 +96,9 @@ const Coin = (props) => {
               )}
               {isWithdrawOpen && (
                 <div className="withdrawpage">
+                  <article className="modal-title">출금</article>
                   <img
+                    className="close"
                     onClick={handleCloseClick}
                     src="./images/ic-modal-close.svg"
                     alt=""

@@ -51,7 +51,7 @@ li {
 }
 
 .connectButton {
-  border: 1px solid #c1c5cc;
+  border: 1px solid #dee3eb;
   border-radius: 2px;
   color: #999;
   width: 100%;
@@ -93,10 +93,11 @@ li {
 
 .title strong {
   color: #e66d16;
+  font-size: 28px;
 }
 
 .wallet {
-  border: 1px solid #c1c5cc;
+  border: 1px solid #ebeef2;
 }
 
 .wallet > h2 {
@@ -107,8 +108,8 @@ li {
 
 .wallet > .menu {
   display: flex;
-  border-top: 1px solid #c1c5cc;
-  border-bottom: 1px solid #c1c5cc;
+  border-top: 1px solid #ebeef2;
+  border-bottom: 1px solid #ebeef2;
   gap: 150px;
 }
 
@@ -219,6 +220,7 @@ li {
   font-size: 20px;
   color: #333;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .close {
@@ -237,4 +239,44 @@ li {
 strong {
   font-size: 12px;
   color: #999;
+}
+
+.wallet-address {
+  display: flex;
+  margin-top: 10px;
+}
+
+.address {
+  width: calc(100% - 66px);
+  height: auto;
+  padding: 10px 20px;
+  border: 1px solid #e6d2b8;
+  word-break: break-all;
+  font-size: 14px;
+  color: #333;
+  background: #faf7f2;
+  border-radius: 1px;
+}
+
+.address .three {
+  color: #e66d16;
+}
+
+.copy-button {
+  height: auto;
+  margin-left: 10px;
+  border: 1px solid #e6d2b8;
+  background-color: #fff;
+  border-radius: 1px;
+  padding: 10px;
+  color: #6f6558;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.copy-button:hover {
+  background-color: #e66d16;
+  color: #fff;
 }

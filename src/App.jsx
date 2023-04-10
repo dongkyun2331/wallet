@@ -100,6 +100,7 @@ function App() {
           isConnected={isConnected}
           currentBalance={currentBalance}
           chainId={chainId}
+          walletAddress={walletAddress}
         />
       </div>
     </div>

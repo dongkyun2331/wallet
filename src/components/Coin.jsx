@@ -1,15 +1,25 @@
 import { useState, useEffect } from "react";
 import chainIds from "../chainList/chainIds";
 import axios from "axios";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Coin = (props) => {
-  const { isConnected, currentBalance, chainId } = props;
+  const { isConnected, currentBalance, chainId, walletAddress } = props;
 
   const [coinPrice, setCoinPrice] = useState(null);
   const [setLoading] = useState(true);
   const [setError] = useState(null);
   const [isDepositOpen, setIsDepositOpen] = useState(false);
   const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyClick = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     const fetchCoinPrice = async () => {
@@ -26,7 +36,7 @@ const Coin = (props) => {
       }
     };
     fetchCoinPrice();
-  }, []);
+  }, [chainId]);
 
   const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
 
@@ -97,6 +107,21 @@ const Coin = (props) => {
                     중인 자산을 입금할 수 있습니다.
                   </p>
                   <strong>입금 주소</strong>
+                  <div className="wallet-address">
+                    <div className="address">
+                      <span className="three">{walletAddress.slice(0, 3)}</span>
+                      <span>{walletAddress.slice(3, -3)}</span>
+                      <span className="three">{walletAddress.slice(-3)}</span>
+                    </div>
+                    <CopyToClipboard
+                      text={walletAddress}
+                      onCopy={handleCopyClick}
+                    >
+                      <button className="copy-button">
+                        {isCopied ? "복사 완료" : "복사"}
+                      </button>
+                    </CopyToClipboard>
+                  </div>
                 </div>
               )}
               {isWithdrawOpen && (

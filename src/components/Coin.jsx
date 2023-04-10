@@ -49,7 +49,7 @@ const Coin = (props) => {
           </li>
           <li>
             <div className="price">
-              {coinPrice ? Number(coinPrice).toFixed(2) : ""}
+              {coinPrice ? Number(coinPrice).toFixed(4) : ""}
             </div>
           </li>
           <li>

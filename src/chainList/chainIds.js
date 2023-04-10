@@ -48,8 +48,16 @@ const chainIds = {
     icon: <img src="./images/ethereum.webp" alt="" />,
   },
   250: { name: "팬텀", symbol: "FTM" },
-  8217: { name: "클레이튼", symbol: "KLAY" },
-  1001: { name: "클레이튼", symbol: "KLAY" },
+  8217: {
+    name: "클레이튼",
+    symbol: "KLAY",
+    icon: <img src="./images/klaytn.webp" alt="" />,
+  },
+  1001: {
+    name: "클레이튼",
+    symbol: "KLAY",
+    icon: <img src="./images/klaytn.webp" alt="" />,
+  },
   61: { name: "이더리움 클래식", symbol: "ETC" },
   1337: {
     name: "이더리움",

@@ -244,6 +244,7 @@ strong {
 .wallet-address {
   display: flex;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .address {
@@ -256,9 +257,10 @@ strong {
   color: #333;
   background: #faf7f2;
   border-radius: 1px;
+  font-weight: 600;
 }
 
-.address .three {
+.three {
   color: #e66d16;
 }
 
@@ -279,4 +281,19 @@ strong {
 .copy-button:hover {
   background-color: #e66d16;
   color: #fff;
+}
+
+.line {
+  content: " ";
+  border-bottom: 1px solid #dee3eb;
+}
+
+.warning {
+  margin-top: 10px;
+  margin-left: 16px;
+}
+
+.warning_item {
+  list-style: disc;
+  font-size: 12px;
 }

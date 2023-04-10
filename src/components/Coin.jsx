@@ -122,6 +122,16 @@ const Coin = (props) => {
                       </button>
                     </CopyToClipboard>
                   </div>
+                  <div className="line"></div>
+                  <strong>입금 안내</strong>
+                  <ul className="warning">
+                    <li className="warning_item">
+                      <span className="three">
+                        다른 암호화폐를 입금하는 경우
+                      </span>
+                    </li>
+                    <li className="warning_item"></li>
+                  </ul>
                 </div>
               )}
               {isWithdrawOpen && (

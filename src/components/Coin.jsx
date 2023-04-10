@@ -28,6 +28,9 @@ const Coin = (props) => {
 
   const displayCurrentBalance = `${currentBalance?.toFixed(4)}`;
 
+  const evaluation = coinPrice ? currentBalance * coinPrice : 0;
+  const displayEvaluation = evaluation ? evaluation.toFixed(2) : "0.00";
+
   return (
     <>
       {isConnected ? (
@@ -48,6 +51,9 @@ const Coin = (props) => {
             <div className="price">
               {coinPrice ? Number(coinPrice).toFixed(2) : ""}
             </div>
+          </li>
+          <li>
+            <div className="evaluation">{displayEvaluation}</div>
           </li>
         </ul>
       ) : (
@@ -70,6 +76,9 @@ const Coin = (props) => {
             <div className="price">
               {coinPrice ? Number(coinPrice).toFixed(2) : ""}
             </div>
+          </li>
+          <li>
+            <div className="evaluation">{displayEvaluation}</div>
           </li>
         </ul>
       )}

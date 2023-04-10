@@ -94,7 +94,6 @@ function App() {
           <li>토큰</li>
           <li>수량</li>
           <li>가격</li>
-          <li>최근 7일</li>
           <li>평가금액</li>
         </ul>
         <Coin

@@ -55,6 +55,10 @@ const Coin = (props) => {
           <li>
             <div className="evaluation">{displayEvaluation}</div>
           </li>
+          <li className="button">
+            <button className="deposit">입금</button>
+            <button className="withdraw">출금</button>
+          </li>
         </ul>
       ) : (
         <ul className="coin">

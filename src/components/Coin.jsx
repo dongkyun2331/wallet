@@ -92,6 +92,11 @@ const Coin = (props) => {
                     src="./images/ic-modal-close.svg"
                     alt=""
                   />
+                  <p className="text-gray">
+                    아래 지갑 주소로 입금해주세요. 거래소(개인지갑)에서 보유
+                    중인 자산을 입금할 수 있습니다.
+                  </p>
+                  <strong>입금 주소</strong>
                 </div>
               )}
               {isWithdrawOpen && (

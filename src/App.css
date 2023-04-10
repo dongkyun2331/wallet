@@ -215,13 +215,26 @@ li {
   z-index: 2;
 }
 
-h2 {
-  float: left;
+.modal-title {
   font-size: 20px;
   color: #333;
   margin-bottom: 20px;
 }
 
 .close {
-  float: right;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.text-gray {
+  font-size: 14px;
+  color: #999;
+  display: block;
+  margin-bottom: 20px;
+}
+
+strong {
+  font-size: 12px;
+  color: #999;
 }

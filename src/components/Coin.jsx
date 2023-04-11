@@ -129,8 +129,14 @@ const Coin = (props) => {
                       <span className="three">
                         다른 암호화폐를 입금하는 경우
                       </span>
+                      <span>자산 복구가 불가능합니다.</span>
                     </li>
-                    <li className="warning_item"></li>
+                    <li className="warning_item">
+                      <span>블록체인 특성 상 </span>
+                      <span className="three"> 입금주소 오입력</span>
+                      <span>으로 인해 발생하는 자산 손실에 대해</span>
+                      <span className="three">복구가 불가능합니다.</span>
+                    </li>
                   </ul>
                 </div>
               )}

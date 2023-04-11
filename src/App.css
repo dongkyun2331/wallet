@@ -296,4 +296,5 @@ strong {
 .warning_item {
   list-style: disc;
   font-size: 12px;
+  color: #999;
 }

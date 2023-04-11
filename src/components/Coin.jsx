@@ -182,7 +182,11 @@ const Coin = (props) => {
                       max
                     </button>
                   </div>
-                  <strong>출금 네트워크</strong>
+                  <strong>출금 주소</strong>
+                  <input
+                    type="text"
+                    placeholder="자산을 전송 받을 주소를 입력해주세요"
+                  />
                 </div>
               )}
             </div>

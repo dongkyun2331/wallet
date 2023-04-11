@@ -212,10 +212,13 @@ button {
   transform: translate(-50%, -50%);
   width: 33%;
   height: 95%;
-  padding: 1.5rem 1.5rem;
   /* 1rem : 16px */
   background-color: #fff;
   z-index: 2;
+}
+
+.box {
+  padding: 1.5rem 1.5rem;
 }
 
 .modal-title {
@@ -298,6 +301,7 @@ strong {
   list-style: disc;
   font-size: 12px;
   color: #999;
+  margin-bottom: 10px;
 }
 
 input {
@@ -346,4 +350,16 @@ input:focus {
 
 #withdrawAddress {
   margin-bottom: 20px;
+}
+
+.submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  border: none;
+  background-color: #b39c7d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
 }

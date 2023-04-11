@@ -153,58 +153,63 @@ const Coin = (props) => {
               )}
               {isWithdrawOpen && (
                 <div className="withdrawpage">
-                  <article className="modal-title">출금</article>
-                  <img
-                    className="close"
-                    onClick={handleCloseClick}
-                    src="./images/ic-modal-close.svg"
-                    alt=""
-                  />
-                  <p className="text-gray">
-                    유저가 선택한 네트워크로 출금합니다.
-                  </p>
-                  <strong>출금 수량</strong>
-                  <input
-                    type="number"
-                    id="withdrawAmount"
-                    placeholder="0"
-                    step="0.0001"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                  />
-                  <div className="exchange-value-input">
-                    <span>출금 가능</span>
-                    <span className="pointer">{displayCurrentBalance}</span>
-                    <button
-                      className="exchange-value-input-max"
-                      onClick={handleMaxClick}
-                    >
-                      max
-                    </button>
+                  <div className="box">
+                    <article className="modal-title">출금</article>
+                    <img
+                      className="close"
+                      onClick={handleCloseClick}
+                      src="./images/ic-modal-close.svg"
+                      alt=""
+                    />
+                    <p className="text-gray">
+                      유저가 선택한 네트워크로 출금합니다.
+                    </p>
+                    <strong>출금 수량</strong>
+                    <input
+                      type="number"
+                      id="withdrawAmount"
+                      placeholder="0"
+                      step="0.0001"
+                      value={inputValue}
+                      onChange={handleInputChange}
+                    />
+                    <div className="exchange-value-input">
+                      <span>출금 가능</span>
+                      <span className="pointer">{displayCurrentBalance}</span>
+                      <button
+                        className="exchange-value-input-max"
+                        onClick={handleMaxClick}
+                      >
+                        max
+                      </button>
+                    </div>
+                    <strong>출금 주소</strong>
+                    <input
+                      type="text"
+                      id="withdrawAddress"
+                      placeholder="자산을 전송 받을 주소를 입력해주세요"
+                    />
+                    <strong>출금 안내</strong>
+                    <ul className="warning">
+                      <li className="warning_item">
+                        출금 신청이 완료되면 취소가 불가능하며, 다른 디지털 자산
+                        지갑으로 잘못 출금하는 경우 자산 복구가 불가능합니다.
+                      </li>
+                      <li className="warning_item">
+                        블록체인 특성 상{" "}
+                        <span className="three">입금주소 오입력</span> 으로 인해
+                        발생하는 자산 손실에 대해{" "}
+                        <span className="three">복구가 불가능합니다.</span>
+                      </li>
+                      <li className="warning_item">
+                        거래소로 전송하려는 경우, 해당 거래소가 컨트랙트를
+                        사용하여 입금 가능한 거래소인지 반드시 확인해주세요.
+                        컨트랙트 입금이 불가능한 경우, 먼저 개인 지갑으로 자산을
+                        전송한 후, 다시 거래소로 입금하시는 것을 권장합니다
+                      </li>
+                    </ul>
                   </div>
-                  <strong>출금 주소</strong>
-                  <input
-                    type="text"
-                    id="withdrawAddress"
-                    placeholder="자산을 전송 받을 주소를 입력해주세요"
-                  />
-                  <strong>출금 안내</strong>
-                  <ul className="warning">
-                    <li className="warning_item">
-                      출금 신청이 완료되면 취소가 불가능하며, 다른 디지털 자산
-                      지갑으로 잘못 출금하는 경우 자산 복구가 불가능합니다.
-                    </li>
-                    <li className="warning_item">
-                      블록체인 특성 상 입금주소 오입력으로 인해 발생하는 자산
-                      손실에 대해 복구가 불가능합니다.
-                    </li>
-                    <li className="warning_item">
-                      거래소로 전송하려는 경우, 해당 거래소가 컨트랙트를
-                      사용하여 입금 가능한 거래소인지 반드시 확인해주세요.
-                      컨트랙트 입금이 불가능한 경우, 먼저 개인 지갑으로 자산을
-                      전송한 후, 다시 거래소로 입금하시는 것을 권장합니다
-                    </li>
-                  </ul>
+                  <button className="submit">다음 단계로</button>
                 </div>
               )}
             </div>

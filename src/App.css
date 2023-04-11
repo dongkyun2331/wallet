@@ -298,3 +298,42 @@ strong {
   font-size: 12px;
   color: #999;
 }
+
+input {
+  color: #333;
+  border: 1px solid #dee3eb;
+  cursor: pointer;
+  height: 46.4px;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+#withdrawAmount {
+  display: block;
+  padding: 0 20px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.exchange-value-input {
+  font-size: 12px;
+  color: #b39c7d;
+  margin-top: 10px;
+}
+
+.pointer {
+  margin-left: 8px;
+}
+
+.exchange-value-input-max {
+  margin-left: 8px;
+  border: 1px solid #b39c7d;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2px 5px;
+  font-size: 10px;
+  color: #b39c7d;
+}

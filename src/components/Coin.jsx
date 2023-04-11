@@ -149,6 +149,21 @@ const Coin = (props) => {
                     src="./images/ic-modal-close.svg"
                     alt=""
                   />
+                  <p className="text-gray">
+                    유저가 선택한 네트워크로 출금합니다.
+                  </p>
+                  <strong>출금 수량</strong>
+                  <input
+                    type="number"
+                    id="withdrawAmount"
+                    placeholder="0"
+                    step="0.0001"
+                  />
+                  <div className="exchange-value-input">
+                    <span>출금 가능</span>
+                    <span className="pointer">{displayCurrentBalance}</span>
+                    <button className="exchange-value-input-max">max</button>
+                  </div>
                 </div>
               )}
             </div>

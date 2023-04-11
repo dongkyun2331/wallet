@@ -185,8 +185,10 @@ const Coin = (props) => {
                   <strong>출금 주소</strong>
                   <input
                     type="text"
+                    id="withdrawAddress"
                     placeholder="자산을 전송 받을 주소를 입력해주세요"
                   />
+                  <strong>출금 안내</strong>
                 </div>
               )}
             </div>

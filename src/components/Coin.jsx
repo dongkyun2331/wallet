@@ -182,6 +182,7 @@ const Coin = (props) => {
                       max
                     </button>
                   </div>
+                  <strong>출금 네트워크</strong>
                 </div>
               )}
             </div>

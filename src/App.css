@@ -343,3 +343,7 @@ input:focus {
   font-size: 10px;
   color: #b39c7d;
 }
+
+#withdrawAddress {
+  margin-bottom: 20px;
+}

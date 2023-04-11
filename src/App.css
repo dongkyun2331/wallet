@@ -8,6 +8,10 @@ li {
   list-style: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .App {
   width: 1200px;
   margin: 0 auto;
@@ -74,7 +78,6 @@ li {
 
 .btn {
   margin-right: 50px;
-  cursor: pointer;
   background-color: #b39c7d;
   color: #fff;
 }
@@ -168,7 +171,6 @@ li {
   color: #fff;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .withdraw {
@@ -177,7 +179,6 @@ li {
   color: #b39c7d;
   border: 1px solid #b39c7d;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .dimm {
@@ -274,7 +275,6 @@ strong {
   color: #6f6558;
   font-size: 14px;
   font-weight: 700;
-  cursor: pointer;
   transition: all 0.3s;
 }
 

@@ -14,6 +14,12 @@ const Coin = (props) => {
 
   const [isCopied, setIsCopied] = useState(false);
 
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   const handleCopyClick = () => {
     setIsCopied(true);
     setTimeout(() => {
@@ -54,6 +60,11 @@ const Coin = (props) => {
   const handleCloseClick = () => {
     setIsDepositOpen(false);
     setIsWithdrawOpen(false);
+    setInputValue(false);
+  };
+
+  const handleMaxClick = () => {
+    setInputValue(displayCurrentBalance);
   };
 
   return (
@@ -158,11 +169,18 @@ const Coin = (props) => {
                     id="withdrawAmount"
                     placeholder="0"
                     step="0.0001"
+                    value={inputValue}
+                    onChange={handleInputChange}
                   />
                   <div className="exchange-value-input">
                     <span>출금 가능</span>
                     <span className="pointer">{displayCurrentBalance}</span>
-                    <button className="exchange-value-input-max">max</button>
+                    <button
+                      className="exchange-value-input-max"
+                      onClick={handleMaxClick}
+                    >
+                      max
+                    </button>
                   </div>
                 </div>
               )}

@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import chainIds from "../chainList/chainIds";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Web3 from "web3";
+
+const web3 = new Web3(Web3.givenProvider);
 
 const Coin = (props) => {
   const { isConnected, currentBalance, chainId, walletAddress } = props;
 
   const [coinPrice, setCoinPrice] = useState(null);
-  const [setLoading] = useState(true);
-  const [setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [isDepositOpen, setIsDepositOpen] = useState(false);
   const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);
 
@@ -65,6 +68,18 @@ const Coin = (props) => {
 
   const handleMaxClick = () => {
     setInputValue(displayCurrentBalance);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const accounts = await web3.eth.getAccounts();
+    const account = accounts[0];
+
+    await web3.eth.sendTransaction({
+      from: account,
+      to: e.target.withdrawAddress.value,
+      value: web3.utils.toWei(e.target.withdrawAmount.value, "ether"),
+    });
   };
 
   return (
@@ -152,7 +167,7 @@ const Coin = (props) => {
                 </div>
               )}
               {isWithdrawOpen && (
-                <div className="withdrawpage">
+                <form className="withdrawpage" onSubmit={handleSubmit}>
                   <div className="box">
                     <article className="modal-title">출금</article>
                     <img
@@ -209,8 +224,8 @@ const Coin = (props) => {
                       </li>
                     </ul>
                   </div>
-                  <button className="submit">다음 단계로</button>
-                </div>
+                  <input type="submit" className="submit" value="다음 단계로" />
+                </form>
               )}
             </div>
           )}

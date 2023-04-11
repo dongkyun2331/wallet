@@ -1,7 +1,9 @@
-npm install ethers@5.4.4
+npm install -g ethers@5.4.4
 
 npm i axios
 
-npm install chart.js --save
-
 npm install react-copy-to-clipboard
+
+npm i -g web3
+
+npm install chart.js --save

@@ -80,6 +80,7 @@ button {
   margin-right: 50px;
   background-color: #b39c7d;
   color: #fff;
+  cursor: pointer;
 }
 
 .pageButtonBold {
@@ -203,6 +204,7 @@ button {
   /* 1rem : 16px */
   background-color: #fff;
   z-index: 2;
+  overflow: hidden;
 }
 
 .withdrawpage {
@@ -215,6 +217,7 @@ button {
   /* 1rem : 16px */
   background-color: #fff;
   z-index: 2;
+  overflow: hidden;
 }
 
 .box {

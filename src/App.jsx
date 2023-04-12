@@ -81,6 +81,7 @@ function App() {
               isConnected={isConnected}
               connectWallet={connectWallet}
               walletAddress={walletAddress}
+              chainId={chainId}
             />
           </div>
         </div>

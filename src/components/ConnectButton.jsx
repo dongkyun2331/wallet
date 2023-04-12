@@ -1,7 +1,8 @@
 import { useState } from "react";
+import chainIds from "../chainList/chainIds";
 
 const ConnectButton = (props) => {
-  const { isConnected, connectWallet, walletAddress } = props;
+  const { isConnected, connectWallet, walletAddress, chainId } = props;
 
   const displayWalletAddress = `0x${walletAddress?.substring(
     2,
@@ -37,6 +38,12 @@ const ConnectButton = (props) => {
       )}
       {isConnected ? (
         <div className="buttonContainer">
+          <span
+            className="pageButtonBold connectButton"
+            onClick={handleAddressClick}
+          >
+            {chainIds[chainId].name}
+          </span>
           <span
             className="pageButtonBold connectButton"
             onClick={handleAddressClick}

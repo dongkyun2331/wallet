@@ -42,7 +42,7 @@ const ConnectButton = (props) => {
             className="pageButtonBold connectButton"
             onClick={handleAddressClick}
           >
-            {chainIds[chainId].name}
+            {chainIds[chainId].network}
           </span>
           <span
             className="pageButtonBold connectButton"

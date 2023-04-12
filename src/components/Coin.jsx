@@ -96,16 +96,14 @@ const Coin = (props) => {
                 <div className="symbol">{chainIds[chainId].symbol}</div>
               </span>
             </li>
-            <li>
-              <div className="balance">{displayCurrentBalance}</div>
+            <li className="li-box">
+              <div>{displayCurrentBalance}</div>
             </li>
-            <li>
-              <div className="price">
-                {coinPrice ? Number(coinPrice).toFixed(4) : ""}
-              </div>
+            <li className="li-box">
+              <div>{coinPrice ? Number(coinPrice).toFixed(4) : ""}</div>
             </li>
-            <li>
-              <div className="evaluation">{displayEvaluation}</div>
+            <li className="li-box">
+              <div>{displayEvaluation}</div>
             </li>
             <li className="button">
               <button className="deposit" onClick={handleDepositClick}>
@@ -243,16 +241,14 @@ const Coin = (props) => {
               <div className="symbol">ETH</div>
             </span>
           </li>
-          <li>
-            <div className="balance">0.0000</div>
+          <li className="li-box">
+            <div>0.0000</div>
           </li>
-          <li>
-            <div className="price">
-              {coinPrice ? Number(coinPrice).toFixed(2) : ""}
-            </div>
+          <li className="li-box">
+            <div>{coinPrice ? Number(coinPrice).toFixed(2) : ""}</div>
           </li>
-          <li>
-            <div className="evaluation">{displayEvaluation}</div>
+          <li className="li-box">
+            <div>{displayEvaluation}</div>
           </li>
         </ul>
       )}

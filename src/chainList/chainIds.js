@@ -75,19 +75,11 @@ const chainIds = {
     symbol: "ETC",
   },
   1337: {
-    network: "Ganache",
+    network: "Ganache Ethereum Testnet",
     name: "이더리움",
     symbol: "ETH",
     icon: <img src="./images/ethereum.webp" alt="" />,
     rpcUrl: "http://127.0.0.1:8545",
-  },
-  ganache: {
-    network: "Ganache",
-    name: "이더리움",
-    symbol: "ETH",
-    icon: <img src="./images/ethereum.webp" alt="" />,
-    chainId: 1337, // Ganache의 chain ID는 1337입니다.
-    rpcUrl: "http://localhost:8545", // Ganache의 RPC URL입니다.
   },
 };
 

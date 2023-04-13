@@ -63,7 +63,7 @@ const ConnectButton = (props) => {
         params: [
           {
             chainId: "0x539",
-            chainName: "Ganache",
+            chainName: "Ganache Ethereum Testnet",
             rpcUrls: ["http://127.0.0.1:8545"],
             nativeCurrency: {
               name: "Ganache",

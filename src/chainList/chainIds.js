@@ -79,6 +79,7 @@ const chainIds = {
     name: "이더리움",
     symbol: "ETH",
     icon: <img src="./images/ethereum.webp" alt="" />,
+    rpcUrl: "http://127.0.0.1:8545",
   },
 };
 

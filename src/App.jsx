@@ -88,7 +88,6 @@ function App() {
               connectWallet={connectWallet}
               walletAddress={walletAddress}
               chainId={chainId}
-              switchNetwork={switchNetwork}
             />
           </div>
         </div>

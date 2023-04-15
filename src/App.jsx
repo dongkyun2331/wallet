@@ -39,6 +39,25 @@ function App() {
     await getWalletData(_signer);
     // 메타마스크 계정의 네트워크 ID가 변경되었을 때
     window.ethereum.on("chainChanged", handleChainChanged);
+    window.ethereum.on("accountsChanged", handleAccountsChanged);
+  };
+
+  const handleAccountsChanged = async (accounts) => {
+    if (accounts.length === 0) {
+      // 계정이 없는 경우 처리
+    } else {
+      // 메타마스크로 선택된 계정 가져오기
+      const selectedAddress = accounts[0];
+
+      // provider, signer 업데이트
+      const _provider = await getProvider();
+      const _signer = await getSigner(_provider);
+
+      await getWalletData(_signer);
+
+      // 해당 계정으로 업데이트
+      setWalletAddress(selectedAddress);
+    }
   };
 
   const getProvider = async () => {

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ethers } from "ethers";
 
 import ConnectButton from "./components/ConnectButton";
@@ -82,14 +82,26 @@ function App() {
     return signer;
   };
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      await getWalletData(signer);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [signer]);
+
   const getWalletData = async (signer) => {
     const result = await Promise.all([
       signer.getAddress(),
       signer.getBalance(),
       signer.getChainId(),
     ]);
+    const newBalance = Number(ethers.utils.formatEther(result[1]));
+    if (newBalance !== currentBalance) {
+      setCurrentBalance(newBalance);
+    }
+
     setWalletAddress(result[0]);
-    setCurrentBalance(Number(ethers.utils.formatEther(result[1])));
     setChainId(result[2]);
   };
 

@@ -7,3 +7,5 @@ npm install react-copy-to-clipboard
 npm i -g web3
 
 ganache-cli
+
+npm install --save react-tradingview-widget

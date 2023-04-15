@@ -3,6 +3,7 @@ import chainIds from "../chainList/chainIds";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Web3 from "web3";
+import TradingViewWidget, { Themes } from "react-tradingview-widget";
 
 const web3 = new Web3(Web3.givenProvider);
 
@@ -18,6 +19,8 @@ const Coin = (props) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const [inputValue, setInputValue] = useState("");
+
+  const [isCoinChartOpen, setIsCoinChartOpen] = useState(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -44,6 +47,7 @@ const Coin = (props) => {
         setLoading(false);
       }
     };
+
     fetchCoinPrice();
   }, [chainId]);
 
@@ -64,6 +68,7 @@ const Coin = (props) => {
     setIsDepositOpen(false);
     setIsWithdrawOpen(false);
     setInputValue(false);
+    setIsCoinChartOpen(false);
   };
 
   const handleMaxClick = () => {
@@ -83,12 +88,16 @@ const Coin = (props) => {
     handleCloseClick();
   };
 
+  const handleCoinnameClick = () => {
+    setIsCoinChartOpen(true);
+  };
+
   return (
     <>
       {isConnected ? (
         <div>
           <ul className="coin">
-            <li>
+            <li className="coin-name" onClick={handleCoinnameClick}>
               <span>
                 <div className="icon">{chainIds[chainId].icon}</div>
               </span>
@@ -115,7 +124,7 @@ const Coin = (props) => {
               </button>
             </li>
           </ul>
-          {(isDepositOpen || isWithdrawOpen) && (
+          {(isDepositOpen || isWithdrawOpen || isCoinChartOpen) && (
             <div>
               <div className="dimm" onClick={handleCloseClick}></div>
               {isDepositOpen && (
@@ -225,6 +234,16 @@ const Coin = (props) => {
                   </div>
                   <input type="submit" className="submit" value="다음 단계로" />
                 </form>
+              )}
+              {isCoinChartOpen && (
+                <div className="chart-wrapper">
+                  <TradingViewWidget
+                    symbol={`${chainIds[chainId].symbol}/USDT`}
+                    theme={Themes.DARK}
+                    locale="ko"
+                    autosize
+                  />
+                </div>
               )}
             </div>
           )}

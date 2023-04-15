@@ -80,6 +80,7 @@ const Coin = (props) => {
       to: e.target.withdrawAddress.value,
       value: web3.utils.toWei(e.target.withdrawAmount.value, "ether"),
     });
+    handleCloseClick();
   };
 
   return (

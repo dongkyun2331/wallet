@@ -5,3 +5,5 @@ npm i axios
 npm install react-copy-to-clipboard
 
 npm i -g web3
+
+ganache-cli

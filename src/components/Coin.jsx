@@ -242,6 +242,7 @@ const Coin = (props) => {
                     theme={Themes.DARK}
                     locale="ko"
                     autosize
+                    enable_publishing
                   />
                 </div>
               )}

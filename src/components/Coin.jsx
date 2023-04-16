@@ -15,11 +15,8 @@ const Coin = (props) => {
   const [error, setError] = useState(false);
   const [isDepositOpen, setIsDepositOpen] = useState(false);
   const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);
-
   const [isCopied, setIsCopied] = useState(false);
-
   const [inputValue, setInputValue] = useState("");
-
   const [isCoinChartOpen, setIsCoinChartOpen] = useState(false);
 
   const handleInputChange = (event) => {

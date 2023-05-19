@@ -35,6 +35,7 @@ function App() {
     const _provider = await getProvider();
     const _signer = await getSigner(_provider);
     await getWalletData(_signer);
+
     // 메타마스크 계정의 네트워크 ID가 변경되었을 때
     window.ethereum.on("chainChanged", handleChainChanged);
     window.ethereum.on("accountsChanged", handleAccountsChanged);

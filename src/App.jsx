@@ -17,7 +17,6 @@ function App() {
       //메타마스크 설치 된 경우
       if (typeof window.ethereum !== "undefined") {
         await getMetamaskData();
-
         setIsConnected(true);
         //메타마스크 설치 안된 경우
       } else {

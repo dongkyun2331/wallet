@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState, useEffect, useCallback } from "react";
 import { ethers } from "ethers";
-
 import ConnectButton from "./components/ConnectButton";
 import Coin from "./components/Coin";
 

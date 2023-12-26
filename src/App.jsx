@@ -109,7 +109,7 @@ function App() {
       <nav className="nav">
         <div className="leftNav">
           <img src="images/profile.png" className="img" />
-          <h1>KYUNswap</h1>
+          <h1>PORIswap</h1>
         </div>
         <div className="rightNav">
           <div className="connectButtonContainer">

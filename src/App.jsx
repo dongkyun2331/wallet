@@ -3,8 +3,6 @@ import { useState, useEffect, useCallback } from "react";
 import { ethers } from "ethers";
 import ConnectButton from "./components/ConnectButton";
 import Coin from "./components/Coin";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function App() {
   const [provider, setProvider] = useState(undefined);
@@ -107,7 +105,7 @@ function App() {
   };
 
   return (
-    <Container>
+    <div className="App">
       <nav className="nav">
         <div className="leftNav">
           <img src="images/profile.png" className="img" />
@@ -142,7 +140,7 @@ function App() {
           walletAddress={walletAddress}
         />
       </div>
-    </Container>
+    </div>
   );
 }
 

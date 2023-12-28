@@ -12,18 +12,23 @@ button {
   cursor: pointer;
 }
 
+/* 전체 너비에 대한 반응형 스타일 */
 .App {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* 네비게이션에 대한 반응형 스타일 */
 .nav {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 150px;
   margin: 0 auto;
   margin-top: 20px;
 }
 
+/* 왼쪽 네비게이션 아이템에 대한 스타일 */
 .leftNav {
   float: left;
   display: flex;
@@ -40,6 +45,7 @@ button {
   color: #4d463d;
 }
 
+/* 오른쪽 네비게이션 아이템에 대한 스타일 */
 .rightNav {
   float: right;
 }
